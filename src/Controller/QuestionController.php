@@ -16,13 +16,15 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/questions/{opal}")
+     * @Route("/questions/{slug}")
      */
 
-    public function show($opal) {
+    public function show($slug) {
+
+        $slug = 'opal is the greatest jewel';
 
         return $this->render('question/show.html.twig', [
-            'question' => ucwords(str_replace("-"," ", $opal))
+            'question' => ucwords(str_replace("-"," ", $slug))
 
         ]);
 
